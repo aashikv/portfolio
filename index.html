@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aashik V | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container">
+        <h1 class="logo">Aashik V</h1>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle">☀️ / 🌙</button>
+    </div>
+</header>
+
+
+<div class="background-animation"></div>
+
+<section class="hero">
+    <div class="container">
+        <h1>Hello, I'm <span>Aashik</span></h1>
+        <p>Computer Science Engineer | Data Analytics Enthusiast | Problem Solver</p>
+        <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+</section>
+
+<section id="about" class="section fade-in">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Dedicated graduate with strong communication and interpersonal skills. Experienced in data entry and analytics, with quick learning abilities for both tech and business domains.</p>
+    </div>
+</section>
+
+<section id="education" class="section fade-in">
+    <div class="container">
+        <h2>Education</h2>
+        <p><strong>B.Tech Computer Science Engineering</strong></p>
+        <p>Hindustan Institute of Technology and Science, Chennai (2022-2026)</p>
+    </div>
+</section>
+
+<section id="skills" class="section fade-in">
+    <div class="container">
+        <h2>Skills & Languages</h2>
+        <div class="skills-grid">
+            <span>Data Analysis</span><span>Project Management</span><span>Problem Solving</span>
+            <span>Communication</span><span>Computer Literacy</span><span>Team Collaboration</span>
+            <span>English</span><span>Tamil</span><span>Hindi</span>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section fade-in">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="card">
+                <h3>Driver Drowsiness Detection (IoT)</h3>
+                <p>Detection system for safer driving using sensors and alerts.</p>
+            </div>
+            <div class="card">
+                <h3>Apartment Visitor Management System</h3>
+                <p>Web system to efficiently manage and log visitors.</p>
+            </div>
+            <div class="card">
+                <h3>Smart Health Monitor & Diet Planner (Ongoing)</h3>
+                <p>Combines health data monitoring with AI-driven diet recommendations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="certifications" class="section fade-in">
+    <div class="container">
+        <h2>Certifications</h2>
+        <ul>
+            <li>NPTEL Soft Skills</li>
+            <li>Python (MyCaptain)</li>
+            <li>Psychology (MyCaptain)</li>
+            <li>Photography (MyCaptain)</li>
+            <li>Tata Cybersecurity Analyst</li>
+            <li>Tata GenAI Analytics</li>
+            <li>Investment Risk (Coursera)</li>
+            <li>Deloitte Data Analytics</li>
+            <li>British Airways (Data Science)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact" class="section fade-in">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:aashik2004@gmail.com">aashik2004@gmail.com</a></p>
+        <p>Phone: +91 7338910249</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/aashik-v-811063260" target="_blank">linkedin.com/in/aashik-v-811063260</a></p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Aashik V. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('appear');
+            }
+        });
+    });
+    faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

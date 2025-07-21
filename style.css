@@ -1,0 +1,300 @@
+:root {
+    --text-color: #f0f0f0;
+    --bg-color: #0e0e0e;
+    --accent-color: #00ffd0;
+}
+
+[data-theme="light"] {
+    --text-color: #111;
+    --bg-color: #f5f5f5;
+    --accent-color: #0077ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    position: relative;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --------------------- NAVBAR ---------------------- */
+.navbar {
+    position: sticky;
+    top: 20px;
+    margin: 0 auto;
+    width: 90%;
+    background-color: rgba(30, 30, 30, 0.6);
+    padding: 14px 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+[data-theme="light"] .navbar {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--accent-color);
+    transition: width 0.4s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    background: linear-gradient(135deg, var(--accent-color), #00ffa5);
+    color: #000;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 255, 208, 0.5);
+    transition: background 0.4s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+/* --------------------- HERO ---------------------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    color: var(--accent-color);
+}
+
+.hero p {
+    color: var(--text-color);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 40px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: darkcyan;
+    color: #fff;
+}
+
+/* --------------------- SECTIONS ---------------------- */
+.section {
+    padding: 100px 0;
+}
+
+.section h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: var(--text-color);
+}
+
+/* --------------------- SKILLS ---------------------- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.skills-grid span {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--accent-color);
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.skills-grid span:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* --------------------- PROJECTS ---------------------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* --------------------- FOOTER ---------------------- */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* --------------------- BACKGROUND ANIMATION ---------------------- */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(0,255,208,0.1), transparent 50%);
+    transform: rotate(45deg);
+    animation: moveBg 20s linear infinite;
+    z-index: -1;
+}
+
+[data-theme="light"] .background-animation {
+    background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 100%);
+    animation: none;
+}
+
+@keyframes moveBg {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* --------------------- FADE-IN ON SCROLL ---------------------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------- LINKS ---------------------- */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+    color: var(--text-color);
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* --------------------- RESPONSIVE ---------------------- */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .theme-toggle {
+        margin-top: 10px;
+    }
+}
+
